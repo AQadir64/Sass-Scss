@@ -1,0 +1,16 @@
+
+// variable partials
+
+/// sass variables
+$primary-color: #287650;
+$accent-color: #f4d657;
+$text-color: #ffffff;
+
+// sass maps //// like object key value pair;
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700
+);
+
+$mobile : 800px;

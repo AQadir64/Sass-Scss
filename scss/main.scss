@@ -1,0 +1,80 @@
+// import use to add partials to our main scss files and it diectly add
+// the css
+
+@import "./resets";
+@import "./variables";
+
+// scss functions
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+body {
+  background: linear-gradient(to left, $primary-color 0%, $accent-color 51%);
+}
+h1 {
+  // function call
+  font-weight: weight(bold);
+  margin: 5px;
+  color: yellow;
+}
+h2 {
+  // function call
+  font-weight: weight(medium);
+  margin: 5px;
+}
+h3 {
+  //map call
+  font-weight: map-get($font-weights, bold);
+  margin: 5px;
+}
+
+//sass mixins
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  flex-direction: $direction;
+}
+
+@mixin try($value: false) {
+  @if $value {
+    color: black;
+    background: white;
+  }
+}
+
+@mixin mobile{
+    @media (max-width: $mobile) {
+      @content;
+    }
+  }
+
+
+// sass nesting
+
+.main {
+  width: 80%;
+  @include flex-center(row);
+  #{&}__paragraph {
+    font-weight: map-get($font-weights, bold);
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+}
+
+.main-2 {
+  @include flex-center(row);
+  @include mobile{
+      @include flex-center(column)
+  }
+}
+
+.theme-light {
+  @include try(true);
+}
