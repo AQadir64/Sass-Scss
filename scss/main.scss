@@ -59,11 +59,21 @@ h3 {
 .main {
   width: 80%;
   @include flex-center(row);
-  #{&}__paragraph {
+  #{&}__paragraph1 {
     font-weight: map-get($font-weights, bold);
 
     &:hover {
       color: $text-color;
+    }
+  }
+
+//sass extend method
+
+  .main__paragraph2{
+    @extend .main__paragraph1;
+    width: 80%-20%;
+    &:hover {
+      color: $accent-color;
     }
   }
 }

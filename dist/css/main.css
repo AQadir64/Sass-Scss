@@ -44,12 +44,20 @@ h3 {
           flex-direction: row;
 }
 
-.main .main__paragraph {
+.main .main__paragraph1, .main .main__paragraph2 {
   font-weight: 700;
 }
 
-.main .main__paragraph:hover {
+.main .main__paragraph1:hover, .main .main__paragraph2:hover {
   color: #ffffff;
+}
+
+.main .main__paragraph2 {
+  width: 60%;
+}
+
+.main .main__paragraph2:hover {
+  color: #f4d657;
 }
 
 .main-2 {
