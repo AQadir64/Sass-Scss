@@ -3,7 +3,8 @@
 
 @import "./resets";
 @import "./variables";
-
+@import "./nesting";
+@import "./interpolation";
 // scss functions
 
 @function weight($weight-name) {
@@ -86,5 +87,9 @@ h3 {
 }
 
 .theme-light {
-  @include try(true);
+  @include try(false);
 }
+
+@include sub-heading(1,"hello world");
+@include sub-heading(2,"hello mars");
+@include sub-heading(3,"hello jupitar");
